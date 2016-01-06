@@ -1,0 +1,50 @@
+\documentclass[11pt,twoside,a4paper]{article}
+
+ %Input source files
+ \usepackage{verbatim}
+ %Input source files
+ \usepackage{listings}
+ %Tables: Span cell over multiple rows
+ \usepackage{multirow}
+ %Figures: Avoid floating (option [H])
+ \usepackage{float}
+ %Special characters, euro symbol, etc.
+ \usepackage{textcomp} 
+ %Include graphics in document
+ \usepackage{graphicx}
+ %command textsubscript 
+ \usepackage{fixltx2e} 
+ \usepackage{import}
+ \usepackage{makeidx}
+ %Recommended for math formulas, provides some more powerful commands and fixes some quirks od ansmath
+ \usepackage{mathtools}
+ \usepackage{pdfcomment}
+ \usepackage{hyperref}
+ \usepackage{todo}
+ \usepackage{color}
+ \makeindex
+ \lstset{ %
+   backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{
+   basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+}
+\begin{document}
+\input{tools/main.tex}
+\input{title/main.tex}
+\vfill \pagebreak
+\input{foreword/main.tex}
+\vfill \pagebreak
+\tableofcontents
+\vfill \pagebreak
+\input{01_environment/main.tex}
+%\vfill \pagebreak
+%\input{chapter02/main.tex}
+%\input{chapter03/main.tex}
+%...
+\pagebreak
+\appendix
+%\vfill \pagebreak
+%\input{appendix01/main.tex}
+\listoftables
+\listoffigures
+\printindex
+\end{document}

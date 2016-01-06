@@ -1,0 +1,20 @@
+\section{Environment}
+\subsection{Build Environment}
+My build environment it a 64-bit Fedora 23 Linux system. I didn't document which packages were installed to get the sources to compile, but running {\it make fw} should tell you what's missing on your system
+\begin{itemize}
+\item{esp\_iot\_sdk\_v1.4.0\_15\_09\_18.zip}
+\item{esptool(\url{https://github.com/themadinventor/esptool})}
+\end{itemize}
+
+\subsection{HW environment}
+To flash the software, I'm using a raspberry pi (in my case, model B+) with esptool installed. The PI is wired to the esp2866 as follows:
+\begin{itemize}
+\item{PI\_GPIO\_5 --> R 3300 --> ESP\_GPIO\_0}
+\item{PI\_GPIO\_6 --> R 3300 --> ESP\_RESET}
+\item{PI\_UART\_RX --> ESP\_UART0\_TX}
+\item{PI\_UART\_TX --> ESP\_UART0\_RX}
+\item{PI\_3.3V\_OUT --> ESP\_VCC}
+\item{PI\_GND --> ESP\_GND}
+\end{itemize}
+PI and ESP are not always physically reachable during development, therefore I use GPIO5/6 from the PI to control reset- and GPIO-0 pin of the device.
+\vfill
